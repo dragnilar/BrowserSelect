@@ -1,4 +1,6 @@
 # Browser Select
+<b>Note: This fork is a customized version of Browser Select and may have different features and/or be missing features. It is not intended to be kept in line with the original branch.</b>
+
 Browser Select is a utility to dynamically select the browser you want instead of just having one default for all links. similar to the prompt in android to choose a browser when a link in a non-browser app is clicked/touched. it may not be useful for everyone but it really helps when you use multiple browsers for different things (e.g. one with proxy and one without) and open many links from other applications (e.g. Messengers).
 
 ![screenshot1](https://raw.githubusercontent.com/zumoshi/BrowserSelect/master/screenshots/photo_2016-07-11_13-44-19.png)
