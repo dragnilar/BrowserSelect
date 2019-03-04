@@ -67,6 +67,9 @@
     <Reference Include="DevExpress.XtraEditors.v18.2, Version=18.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <Private>True</Private>
     </Reference>
+    <Reference Include="DevExpress.XtraGrid.v18.2, Version=18.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v18.2, Version=18.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v18.2, Version=18.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -93,7 +96,9 @@
     <Compile Include="CustomControls\ButtonsUC.Designer.cs">
       <DependentUpon>ButtonsUC.cs</DependentUpon>
     </Compile>
+    <Compile Include="Services\BrowserFinder.cs" />
     <Compile Include="Services\ForegroundAgent.cs" />
+    <Compile Include="DomainModels\FilterAutoMatchRule.cs" />
     <Compile Include="Views\BrowserSelectWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,7 +136,12 @@
     <Compile Include="CustomControls\VerticalButton.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="ViewModels\SettingsWindowViewModel.cs" />
+    <Compile Include="Views\SettingsWindowDx.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\SettingsWindowDx.Designer.cs">
+      <DependentUpon>SettingsWindowDx.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="CustomControls\BrowserUC.resx">
       <DependentUpon>BrowserUC.cs</DependentUpon>
     </EmbeddedResource>
@@ -164,6 +174,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Views\SettingsWindowDx.resx">
+      <DependentUpon>SettingsWindowDx.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="app.config">
       <SubType>Designer</SubType>
     </None>
@@ -224,6 +237,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ViewModels\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

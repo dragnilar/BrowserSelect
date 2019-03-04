@@ -103,7 +103,7 @@ namespace BrowserSelect.Views
         private void save_rule(string pattern, Browser b)
         {
             // save a rule and save app settings
-            Settings.Default.AutoBrowser.Add((new AutoMatchRule()
+            Settings.Default.AutoBrowser.Add((new FilterAutoMatchRule()
             {
                 Pattern = pattern,
                 Browser = b.name

@@ -18,7 +18,7 @@ namespace BrowserSelect.Views
             InitializeComponent();
         }
 
-        private List<AutoMatchRule> rules = new List<AutoMatchRule>();
+        private List<FilterAutoMatchRule> rules = new List<FilterAutoMatchRule>();
         private void frm_settings_Load(object sender, EventArgs e)
         {
             //check if browser select is the default browser or not
@@ -207,49 +207,6 @@ namespace BrowserSelect.Views
         {
             Settings.Default.check_update = (((CheckBox)sender).Checked) ? "0" : "nope";
             Settings.Default.Save();
-        }
-    }
-    class AutoMatchRule
-    {
-        public string Pattern { get; set; }
-        public string Browser { get; set; }
-
-        public static implicit operator AutoMatchRule(System.String s)
-        {
-            var ss = s.Split(new[] { "[#!][$~][?_]" }, StringSplitOptions.None);
-            return new AutoMatchRule()
-            {
-                Pattern = ss[0],
-                Browser = ss[1]
-            };
-        }
-
-        public override string ToString()
-        {
-            return Pattern + "[#!][$~][?_]" + Browser;
-        }
-
-        public string error()
-        {
-            if (!string.IsNullOrEmpty(Pattern))
-                return string.Format("You forgot to select a Browser for '{0}' rule.", Pattern);
-            else if (!string.IsNullOrEmpty(Browser))
-                return "one of your rules has an Empty pattern. please refer to Help for more information.";
-            else
-                return "";
-        }
-
-        public bool valid()
-        {
-            try //because they may be null
-            {
-                return Browser.Length > 0 && Pattern.Length > 0;
-            }
-            catch
-            {
-                return false;
-            }
-
         }
     }
 }
