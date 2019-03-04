@@ -1,6 +1,6 @@
-﻿namespace BrowserSelect
+﻿namespace BrowserSelect.Views
 {
-    partial class frm_help_rules
+    partial class HelpRulesWindow
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_help_rules));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HelpRulesWindow));
             this.label1 = new System.Windows.Forms.Label();
             this.btn_close = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -63,7 +63,7 @@
             this.Controls.Add(this.btn_close);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
-            this.Name = "frm_help_rules";
+            this.Name = "HelpRulesWindow";
             this.Text = "BrowserSelect - Help";
             this.ResumeLayout(false);
 

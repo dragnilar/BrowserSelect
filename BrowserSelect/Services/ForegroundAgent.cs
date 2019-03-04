@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
 
-namespace BrowserSelect
+namespace BrowserSelect.Services
 {
     // aquired from:
     // http://stackoverflow.com/a/11065126/1461004

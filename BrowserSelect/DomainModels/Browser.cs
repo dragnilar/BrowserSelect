@@ -1,15 +1,15 @@
-﻿using Microsoft.Win32;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Windows.Forms;
-using Newtonsoft.Json.Linq;
 using System.Text.RegularExpressions;
+using System.Windows.Forms;
+using BrowserSelect.Services;
+using Microsoft.Win32;
+using Newtonsoft.Json.Linq;
 
-namespace BrowserSelect
+namespace BrowserSelect.DomainModels
 {
     public class Browser
     {

@@ -1,13 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
+using BrowserSelect.Views;
 
-namespace BrowserSelect
+namespace BrowserSelect.CustomControls
 {
     public partial class ButtonsUC : DevExpress.XtraEditors.XtraUserControl
     {
@@ -24,12 +20,12 @@ namespace BrowserSelect
 
         private void show_setting(object sender, EventArgs e)
         {
-            new frm_settings().ShowDialog();
+            new SettingsWindow().ShowDialog();
         }
 
         private void show_about(object sender, EventArgs e)
         {
-            new frm_About().ShowDialog();
+            new AboutWindow().ShowDialog();
         }
 
         private List<VButton> vbtn = new List<VButton>();

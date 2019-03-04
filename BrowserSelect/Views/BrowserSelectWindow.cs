@@ -4,16 +4,19 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using BrowserSelect.CustomControls;
+using BrowserSelect.DomainModels;
 using BrowserSelect.Properties;
+using BrowserSelect.Services;
 using SHDocVw;
 
-namespace BrowserSelect
+namespace BrowserSelect.Views
 {
-    public partial class Form1 : DevExpress.XtraEditors.XtraForm
+    public partial class BrowserSelectWindow : DevExpress.XtraEditors.XtraForm
     {
         // get the list of Borwsers from registry and remove the ones unchecked from settings
         List<Browser> browsers = BrowserFinder.find().Where(b => !Settings.Default.HideBrowsers.Contains(b.exec)).ToList();
-        public Form1()
+        public BrowserSelectWindow()
         {
             InitializeComponent();
         }
@@ -270,7 +273,7 @@ namespace BrowserSelect
 
         private void btn_help_Click(object sender, EventArgs e)
         {
-            (new frm_help_main()).ShowDialog();
+            (new MainHelpWindow()).ShowDialog();
         }
 
         void btn_update_click(object sender, EventArgs e)

@@ -1,17 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
+using BrowserSelect.Services;
 
-namespace BrowserSelect
+namespace BrowserSelect.Views
 {
-    public partial class frm_About : DevExpress.XtraEditors.XtraForm
+    public partial class AboutWindow : DevExpress.XtraEditors.XtraForm
     {
-        public frm_About()
+        public AboutWindow()
         {
             InitializeComponent();
         }

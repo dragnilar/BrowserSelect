@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using BrowserSelect;
+using BrowserSelect.Views;
 
 namespace Tests
 {
@@ -28,7 +29,7 @@ namespace Tests
             });
             foreach (var test in tests)
             {
-                var rule = Form1.generate_rule(test[0]);
+                var rule = BrowserSelectWindow.generate_rule(test[0]);
                 var check = "bug";
                 switch (rule.mode)
                 {

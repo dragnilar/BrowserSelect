@@ -2,17 +2,18 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
-using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BrowserSelect.DomainModels;
 using BrowserSelect.Properties;
+using BrowserSelect.Services;
 using Microsoft.Win32;
 
-namespace BrowserSelect
+namespace BrowserSelect.Views
 {
-    public partial class frm_settings : DevExpress.XtraEditors.XtraForm
+    public partial class SettingsWindow : DevExpress.XtraEditors.XtraForm
     {
-        public frm_settings()
+        public SettingsWindow()
         {
             InitializeComponent();
         }
@@ -136,18 +137,18 @@ namespace BrowserSelect
             btn_cancel.Text = "Close";
         }
 
-        private frm_help_rules _frmHelp;
+        private HelpRulesWindow _help;
         private void button1_Click(object sender, EventArgs e)
         {
-            if (_frmHelp != null)
+            if (_help != null)
             {   //help window is open
-                _frmHelp.Focus();
+                _help.Focus();
             }
             else
             {   //its not open...
-                _frmHelp = new frm_help_rules();
-                _frmHelp.FormClosed += (o, ev) => _frmHelp = null;
-                _frmHelp.Show();
+                _help = new HelpRulesWindow();
+                _help.FormClosed += (o, ev) => _help = null;
+                _help.Show();
             }
         }
 
@@ -168,7 +169,7 @@ namespace BrowserSelect
         private void frm_settings_FormClosed(object sender, FormClosedEventArgs e)
         {
             //close the help window (if it was open)
-            _frmHelp?.Close();
+            _help?.Close();
         }
 
         private void btn_check_update_Click(object sender, EventArgs e)

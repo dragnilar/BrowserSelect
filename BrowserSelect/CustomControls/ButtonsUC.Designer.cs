@@ -1,4 +1,4 @@
-﻿namespace BrowserSelect
+﻿namespace BrowserSelect.CustomControls
 {
     partial class ButtonsUC
     {

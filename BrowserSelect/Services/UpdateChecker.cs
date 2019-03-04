@@ -1,13 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Net;
-using System.Text;
 using System.Windows.Forms;
-using System.Windows.Forms.VisualStyles;
 using BrowserSelect.Properties;
 
-namespace BrowserSelect
+namespace BrowserSelect.Services
 {
     class UpdateChecker
     {

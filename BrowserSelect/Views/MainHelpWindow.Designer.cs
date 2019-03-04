@@ -1,6 +1,6 @@
-﻿namespace BrowserSelect
+﻿namespace BrowserSelect.Views
 {
-    partial class frm_help_main
+    partial class MainHelpWindow
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_help_main));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainHelpWindow));
             this.label1 = new System.Windows.Forms.Label();
             this.btn_close = new System.Windows.Forms.Button();
             this.SuspendLayout();

@@ -6,7 +6,10 @@ using System.Reflection;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BrowserSelect.DomainModels;
 using BrowserSelect.Properties;
+using BrowserSelect.Services;
+using BrowserSelect.Views;
 
 namespace BrowserSelect
 {
@@ -67,7 +70,7 @@ namespace BrowserSelect
                         if (browser != "display BrowserSelect")
                         {
                             //todo: handle the case if browser is not found (e.g. imported settings or uninstalled browser)
-                            Form1.open_url((Browser)browser);
+                            BrowserSelectWindow.open_url((Browser)browser);
                             return;
                         }
                         else
@@ -82,7 +85,7 @@ namespace BrowserSelect
             // display main form
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new BrowserSelectWindow());
         }
 
         // from : http://stackoverflow.com/a/250400/1461004

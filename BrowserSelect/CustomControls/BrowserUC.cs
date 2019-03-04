@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
+using BrowserSelect.DomainModels;
 
-namespace BrowserSelect {
+namespace BrowserSelect.CustomControls {
     public partial class BrowserUC : DevExpress.XtraEditors.XtraUserControl
     {
         public Browser browser;
