@@ -9,7 +9,7 @@ using SHDocVw;
 
 namespace BrowserSelect
 {
-    public partial class Form1 : Form
+    public partial class Form1 : DevExpress.XtraEditors.XtraForm
     {
         // get the list of Borwsers from registry and remove the ones unchecked from settings
         List<Browser> browsers = BrowserFinder.find().Where(b => !Settings.Default.HideBrowsers.Contains(b.exec)).ToList();

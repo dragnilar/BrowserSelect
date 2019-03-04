@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace BrowserSelect
 {
-    public partial class frm_help_main : Form
+    public partial class frm_help_main : DevExpress.XtraEditors.XtraForm
     {
         public frm_help_main()
         {

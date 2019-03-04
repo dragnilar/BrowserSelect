@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace BrowserSelect
 {
-    public partial class ButtonsUC : UserControl
+    public partial class ButtonsUC : DevExpress.XtraEditors.XtraUserControl
     {
         public ButtonsUC()
         {

@@ -8,7 +8,8 @@ using System.Text;
 using System.Windows.Forms;
 
 namespace BrowserSelect {
-    public partial class BrowserUC : UserControl {
+    public partial class BrowserUC : DevExpress.XtraEditors.XtraUserControl
+    {
         public Browser browser;
         public BrowserUC(Browser b,int index) {
             InitializeComponent();

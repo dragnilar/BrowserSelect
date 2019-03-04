@@ -10,7 +10,7 @@ using Microsoft.Win32;
 
 namespace BrowserSelect
 {
-    public partial class frm_settings : Form
+    public partial class frm_settings : DevExpress.XtraEditors.XtraForm
     {
         public frm_settings()
         {

@@ -39,8 +39,8 @@
             this.pattern = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.browser = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.btn_check_update = new System.Windows.Forms.Button();
             this.chk_check_update = new System.Windows.Forms.CheckBox();
+            this.btn_check_update = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -216,16 +216,6 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Update checker";
             // 
-            // btn_check_update
-            // 
-            this.btn_check_update.Location = new System.Drawing.Point(69, 12);
-            this.btn_check_update.Name = "btn_check_update";
-            this.btn_check_update.Size = new System.Drawing.Size(75, 23);
-            this.btn_check_update.TabIndex = 0;
-            this.btn_check_update.Text = "check now";
-            this.btn_check_update.UseVisualStyleBackColor = true;
-            this.btn_check_update.Click += new System.EventHandler(this.btn_check_update_Click);
-            // 
             // chk_check_update
             // 
             this.chk_check_update.AutoSize = true;
@@ -236,6 +226,16 @@
             this.chk_check_update.Text = "enable";
             this.chk_check_update.UseVisualStyleBackColor = true;
             this.chk_check_update.CheckedChanged += new System.EventHandler(this.chk_check_update_CheckedChanged);
+            // 
+            // btn_check_update
+            // 
+            this.btn_check_update.Location = new System.Drawing.Point(69, 12);
+            this.btn_check_update.Name = "btn_check_update";
+            this.btn_check_update.Size = new System.Drawing.Size(75, 23);
+            this.btn_check_update.TabIndex = 0;
+            this.btn_check_update.Text = "check now";
+            this.btn_check_update.UseVisualStyleBackColor = true;
+            this.btn_check_update.Click += new System.EventHandler(this.btn_check_update_Click);
             // 
             // frm_settings
             // 

@@ -4,9 +4,10 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using DevExpress.XtraEditors;
 
 namespace BrowserSelect {
-    class VButton : Button {
+    class VButton : SimpleButton {
         StringFormat Fmt = new StringFormat();
         private string faketext;
         public VButton() {
