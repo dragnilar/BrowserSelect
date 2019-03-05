@@ -155,13 +155,14 @@ namespace BrowserSelect.Views
         private void CheckedListBoxControlBrowserFiltersOnItemCheck(object sender, ItemCheckEventArgs e)
         {
             //Save changes to the BrowserFilter List
+            if (!(checkedListBoxControlBrowserFilters.Items[e.Index].Value is Browser selectedBrowser)) return;
             if (e.State == CheckState.Checked)
             {
-                if (checkedListBoxControlBrowserFilters.Items[e.Index].Value is Browser item) Settings.Default.HideBrowsers.Remove(item.exec);
+                Settings.Default.HideBrowsers.Remove(selectedBrowser.ExecutablePath);
             }
             else
             {
-                Settings.Default.HideBrowsers.Add(((Browser)repoItemComboBoxBrowser.Items[e.Index]).exec);
+                Settings.Default.HideBrowsers.Add(selectedBrowser.ExecutablePath);
             }
             Settings.Default.Save();
         }
@@ -181,24 +182,22 @@ namespace BrowserSelect.Views
 
             //populate list of browsers for Rule List ComboBox
             var browsers = BrowserFinder.find();
-            //var c = ((DataGridViewComboBoxColumn)gridControlFilters.Columns["browser"]);
-
+            var browserNameList = new List<string>();
+            browserNameList.Add("display BrowserSelect");
             foreach (Browser b in browsers)
             {
-                checkedListBoxControlBrowserFilters.Items.Add(b, !Settings.Default.HideBrowsers.Contains(b.exec));
-                repoItemComboBoxBrowser.Items.Add(b);
+                checkedListBoxControlBrowserFilters.Items.Add(b, !Settings.Default.HideBrowsers.Contains(b.ExecutablePath));
+                browserNameList.Add(b.BrowserName);
             }
 
             // add browser select to the list
-            repoItemComboBoxBrowser.Items.Add("display BrowserSelect");
-
+            repositoryItemLookUpEditBrowser.DataSource = browserNameList;
             //populate Rules in the gridview
             foreach (var rule in Settings.Default.AutoBrowser)
                 AutoMatchRules.Add(rule);
-            var bs = new BindingSource();
-            bs.DataSource = AutoMatchRules;
-            gridControlFilters.DataSource = bs;
-
+            var gridBindingSource = new BindingSource {DataSource = AutoMatchRules};
+            gridControlFilters.DataSource = gridBindingSource;
+            new DxGridMultiSelectEditor(gridViewFilters);
             checkEditEnableUpdates.Checked = Settings.Default.check_update != "nope";
         }
         private void OnClosing(object sender, CancelEventArgs e)

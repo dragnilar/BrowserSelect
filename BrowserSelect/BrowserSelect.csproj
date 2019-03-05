@@ -97,6 +97,7 @@
       <DependentUpon>ButtonsUC.cs</DependentUpon>
     </Compile>
     <Compile Include="Services\BrowserFinder.cs" />
+    <Compile Include="Services\DxGridMultiSelectEditor.cs" />
     <Compile Include="Services\ForegroundAgent.cs" />
     <Compile Include="DomainModels\FilterAutoMatchRule.cs" />
     <Compile Include="Views\BrowserSelectWindow.cs">

@@ -39,7 +39,7 @@ namespace BrowserSelect.Views
 
             foreach (Browser b in browsers)
             {
-                browser_filter.Items.Add(b, !Settings.Default.HideBrowsers.Contains(b.exec));
+                browser_filter.Items.Add(b, !Settings.Default.HideBrowsers.Contains(b.ExecutablePath));
                 c.Items.Add(b.ToString());
             }
             // add browser select to the list
@@ -80,11 +80,11 @@ namespace BrowserSelect.Views
             //Save changes to the BrowserFilter List
             if (e.NewValue == CheckState.Checked)
             {
-                Settings.Default.HideBrowsers.Remove(((Browser)browser_filter.Items[e.Index]).exec);
+                Settings.Default.HideBrowsers.Remove(((Browser)browser_filter.Items[e.Index]).ExecutablePath);
             }
             else
             {
-                Settings.Default.HideBrowsers.Add(((Browser)browser_filter.Items[e.Index]).exec);
+                Settings.Default.HideBrowsers.Add(((Browser)browser_filter.Items[e.Index]).ExecutablePath);
             }
             Settings.Default.Save();
         }
