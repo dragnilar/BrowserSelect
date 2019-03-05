@@ -12,10 +12,10 @@ namespace BrowserSelect.CustomControls {
 
             this.browser = b;
 
-            name.Text = b.name;
+            name.Text = b.BrowserName;
             shortcuts.Text = "( " + Convert.ToString(index+1) + "," + String.Join(",", b.shortcuts) + " )";
             shortcuts.ForeColor = Color.FromKnownColor(KnownColor.GrayText);
-            icon.Image = b.icon.ToBitmap();
+            icon.Image = b.BrowserIcon.ToBitmap();
             icon.SizeMode = PictureBoxSizeMode.Zoom;
         }
         public new event EventHandler Click {

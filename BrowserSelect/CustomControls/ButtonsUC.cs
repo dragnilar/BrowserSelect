@@ -20,7 +20,8 @@ namespace BrowserSelect.CustomControls
 
         private void show_setting(object sender, EventArgs e)
         {
-            new SettingsWindow().ShowDialog();
+            //new SettingsWindow().ShowDialog();
+            new SettingsWindowDx().ShowDialog();
         }
 
         private void show_about(object sender, EventArgs e)

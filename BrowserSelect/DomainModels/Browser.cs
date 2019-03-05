@@ -9,16 +9,16 @@ namespace BrowserSelect.DomainModels
 {
     public class Browser
     {
-        public string name;
-        public string exec;
-        public Icon icon;
-        public string additionalArgs = "";
+        public string BrowserName;
+        public string ExecutablePath;
+        public Icon BrowserIcon;
+        public string AdditionalArgs = "";
 
         public string private_arg
         {
             get
             {
-                var file = exec.Split(new[] { '/', '\\' }).Last().ToLower();
+                var file = ExecutablePath.Split(new[] { '/', '\\' }).Last().ToLower();
                 if (file.Contains("chrome") || file.Contains("chromium"))
                     return "-incognito";
                 if (file.Contains("opera"))
@@ -33,20 +33,15 @@ namespace BrowserSelect.DomainModels
             }
         }
 
-        public List<char> shortcuts => Regex.Replace(name, @"[^A-Za-z\s]", "").Split(' ')
+        public List<char> shortcuts => Regex.Replace(BrowserName, @"[^A-Za-z\s]", "").Split(' ')
             .Where(x => !string.IsNullOrWhiteSpace(x)).Select(x => x.Substring(0, 1).ToLower()[0]).ToList();
         public override string ToString()
         {
-            return name;
+            return BrowserName;
         }
         public static implicit operator Browser(string s)
         {
-            return BrowserFinder.find().First(b => b.name == s);
-        }
-
-        public static explicit operator Browser(CheckedListBoxItem v)
-        {
-            throw new NotImplementedException();
+            return BrowserFinder.find().First(b => b.BrowserName == s);
         }
     }
 }
