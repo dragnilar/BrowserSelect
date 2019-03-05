@@ -15,7 +15,7 @@ namespace BrowserSelect.Views
     public partial class BrowserSelectWindow : DevExpress.XtraEditors.XtraForm
     {
         // get the list of Borwsers from registry and remove the ones unchecked from settings
-        List<Browser> browsers = BrowserFinder.find().Where(b => !Settings.Default.HideBrowsers.Contains(b.exec)).ToList();
+        List<Browser> browsers = BrowserFinder.find().Where(b => !Settings.Default.HideBrowsers.Contains(b.ExecutablePath)).ToList();
         public BrowserSelectWindow()
         {
             InitializeComponent();
@@ -106,7 +106,7 @@ namespace BrowserSelect.Views
             Settings.Default.AutoBrowser.Add((new FilterAutoMatchRule()
             {
                 Pattern = pattern,
-                Browser = b.name
+                Browser = b.BrowserName
             }).ToString());
             Settings.Default.Save();
         }
@@ -205,15 +205,15 @@ namespace BrowserSelect.Views
         public static void open_url(Browser b, bool incognito = false)
         {
             var args = new List<string>();
-            if (!string.IsNullOrEmpty(b.additionalArgs))
-                args.Add(b.additionalArgs);
+            if (!string.IsNullOrEmpty(b.AdditionalArgs))
+                args.Add(b.AdditionalArgs);
             if (incognito)
                 args.Add(b.private_arg);
-            if (b.exec.ToLower().EndsWith("brave.exe"))
+            if (b.ExecutablePath.ToLower().EndsWith("brave.exe"))
                 args.Add("--");
             args.Add(Program.url.Replace("\"", "%22"));
 
-            if (b.exec.EndsWith("iexplore.exe") && !incognito)
+            if (b.ExecutablePath.EndsWith("iexplore.exe") && !incognito)
             {
                 // IE tends to open in a new window instead of a new tab
                 // code borrowed from http://stackoverflow.com/a/3713470/1461004
@@ -232,12 +232,12 @@ namespace BrowserSelect.Views
                 }
                 if (!found)
                 {
-                    Process.Start(b.exec, Program.Args2Str(args));
+                    Process.Start(b.ExecutablePath, Program.Args2Str(args));
                 }
             }
             else
             {
-                Process.Start(b.exec, Program.Args2Str(args));
+                Process.Start(b.ExecutablePath, Program.Args2Str(args));
             }
             Application.Exit();
         }

@@ -22,9 +22,9 @@ namespace BrowserSelect.DomainModels
             if (File.Exists(ff_path))
                 browsers.Add(new Browser()
                 {
-                    name = "FireFox",
-                    exec = ff_path,
-                    icon = IconExtractor.fromFile(ff_path)
+                    BrowserName = "FireFox",
+                    ExecutablePath = ff_path,
+                    BrowserIcon = IconExtractor.fromFile(ff_path)
                 });
             //special case , Edge
             var edge_path = Path.Combine(
@@ -33,10 +33,10 @@ namespace BrowserSelect.DomainModels
             if (File.Exists(edge_path))
                 browsers.Add(new Browser()
                 {
-                    name = "Edge",
+                    BrowserName = "Edge",
                     // #34
-                    exec = "shell:AppsFolder\\Microsoft.MicrosoftEdge_8wekyb3d8bbwe!MicrosoftEdge",
-                    icon = IconExtractor.fromFile(edge_path)
+                    ExecutablePath = "shell:AppsFolder\\Microsoft.MicrosoftEdge_8wekyb3d8bbwe!MicrosoftEdge",
+                    BrowserIcon = IconExtractor.fromFile(edge_path)
                 });
 
             //gather browsers from registry
@@ -46,13 +46,13 @@ namespace BrowserSelect.DomainModels
                 browsers.AddRange(find(hkcu));
 
             //remove myself
-            browsers = browsers.Where(x => Path.GetFileName(x.exec).ToLower() !=
+            browsers = browsers.Where(x => Path.GetFileName(x.ExecutablePath).ToLower() !=
                                            Path.GetFileName(Application.ExecutablePath).ToLower()).ToList();
             //remove duplicates
-            browsers = browsers.GroupBy(browser => browser.exec)
+            browsers = browsers.GroupBy(browser => browser.ExecutablePath)
                 .Select(group => group.First()).ToList();
             //Check for Chrome Profiles
-            Browser BrowserChrome = browsers.FirstOrDefault(x => x.name == "Google Chrome");
+            Browser BrowserChrome = browsers.FirstOrDefault(x => x.BrowserName == "Google Chrome");
             if (BrowserChrome != null)
             {
                 string ChromeUserDataDir = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), @"Google\Chrome\User Data");
@@ -65,14 +65,14 @@ namespace BrowserSelect.DomainModels
                     {
                         browsers.Add(new Browser()
                         {
-                            name = "Chrome (" + GetChromeProfileName(ChromeUserDataDir + "\\" + Profile) + ")",
-                            exec = BrowserChrome.exec,
-                            icon = IconExtractor.fromFile(ChromeUserDataDir + "\\" + Profile + "\\Google Profile.ico"),
-                            additionalArgs = String.Format("--profile-directory={0}", Profile)
+                            BrowserName = "Chrome (" + GetChromeProfileName(ChromeUserDataDir + "\\" + Profile) + ")",
+                            ExecutablePath = BrowserChrome.ExecutablePath,
+                            BrowserIcon = IconExtractor.fromFile(ChromeUserDataDir + "\\" + Profile + "\\Google Profile.ico"),
+                            AdditionalArgs = String.Format("--profile-directory={0}", Profile)
                         });
                     }
                     browsers.Remove(BrowserChrome);
-                    browsers = browsers.OrderBy(x => x.name).ToList();
+                    browsers = browsers.OrderBy(x => x.BrowserName).ToList();
                 }
             }
 
@@ -110,6 +110,7 @@ namespace BrowserSelect.DomainModels
                         var name = (string)key.GetValue(null);
                         var cmd = key.OpenSubKey("shell").OpenSubKey("open").OpenSubKey("command");
                         var exec = (string)cmd.GetValue(null);
+                        
 
                         // by this point if registry is missing keys we are alreay out of here
                         // because of the try catch, but there are still things that could go wrong
@@ -137,11 +138,12 @@ namespace BrowserSelect.DomainModels
                         if (string.IsNullOrWhiteSpace(name))
                             name = Path.GetFileNameWithoutExtension(exec);
 
+                        
                         browsers.Add(new Browser()
                         {
-                            name = name,
-                            exec = exec,
-                            icon = IconExtractor.fromFile(exec)
+                            BrowserName = name,
+                            ExecutablePath = exec,
+                            BrowserIcon = IconExtractor.fromFile(exec),
                         });
                     }
                     catch (NullReferenceException)
