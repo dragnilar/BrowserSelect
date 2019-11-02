@@ -117,11 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <assembly alias="DevExpress.Data.v19.2" name="DevExpress.Data.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-  <data name="btn_help.ImageOptions.SvgImage" type="DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v19.2" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="labelControlFilterInstructions.Text" xml:space="preserve">
+    <value>Using this section, you can add rules that BrowserSelect will use to automatically select a browser. &lt;/br&gt;This will allow you to skip having to click on the desired browser in the main window of BrowserSelect.&lt;/br&gt;More information and examples can be found on &lt;href="https://github.com/zumoshi/BrowserSelect&gt;BrowserSelect's Github&lt;/href&gt;.
+
+</value>
+  </data>
+  <assembly alias="DevExpress.Data.v18.2" name="DevExpress.Data.v18.2, Version=18.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+  <data name="simpleButtonHelp.ImageOptions.SvgImage" type="DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v18.2" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFlEZXZFeHByZXNzLkRhdGEudjE4LjIsIFZlcnNpb249MTguMi41
         LjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjg4ZDE3NTRkNzAwZTQ5YQUBAAAAHURl
@@ -144,6 +146,40 @@
         LDItMC40YzEsMCwxLjgsMC4xLDIuNCwwLjQgICBjMC42LDAuMywxLjIsMC42LDEuNiwwLjljMC40LDAu
         NCwwLjcsMC44LDAuOCwxLjJzMC4zLDAuOCwwLjMsMS4yQzIxLDEyLjQsMjAuOSwxMi45LDIwLjcsMTMu
         M3oiIGZpbGw9IiMwMzlDMjMiIGNsYXNzPSJHcmVlbiIgLz4NCiAgPC9nPg0KPC9zdmc+Cw==
+</value>
+  </data>
+  <data name="simpleButtonClose.ImageOptions.SvgImage" type="DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v18.2" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFlEZXZFeHByZXNzLkRhdGEudjE4LjIsIFZlcnNpb249MTguMi41
+        LjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjg4ZDE3NTRkNzAwZTQ5YQUBAAAAHURl
+        dkV4cHJlc3MuVXRpbHMuU3ZnLlN2Z0ltYWdlAQAAAAREYXRhBwICAAAACQMAAAAPAwAAAHMCAAAC77u/
+        PD94bWwgdmVyc2lvbj0nMS4wJyBlbmNvZGluZz0nVVRGLTgnPz4NCjxzdmcgeD0iMHB4IiB5PSIwcHgi
+        IHZpZXdCb3g9IjAgMCAzMiAzMiIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcv
+        MjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4bWw6c3Bh
+        Y2U9InByZXNlcnZlIiBpZD0iTGF5ZXJfMSI+DQogIDxnIGlkPSJDbG9zZSI+DQogICAgPHBhdGggZD0i
+        TTE2LDJDOC4zLDIsMiw4LjMsMiwxNnM2LjMsMTQsMTQsMTRzMTQtNi4zLDE0LTE0UzIzLjcsMiwxNiwy
+        eiBNMjMuNywyMS43YzAuNCwwLjQsMC40LDEsMCwxLjRsLTAuNiwwLjYgICBjLTAuNCwwLjQtMSwwLjQt
+        MS40LDBMMTYsMThsLTUuNyw1LjdjLTAuNCwwLjQtMSwwLjQtMS40LDBsLTAuNi0wLjZjLTAuNC0wLjQt
+        MC40LTEsMC0xLjRMMTQsMTZsLTUuNy01LjdjLTAuNC0wLjQtMC40LTEsMC0xLjQgICBsMC42LTAuNmMw
+        LjQtMC40LDEtMC40LDEuNCwwTDE2LDE0bDUuNy01LjdjMC40LTAuNCwxLTAuNCwxLjQsMGwwLjYsMC42
+        YzAuNCwwLjQsMC40LDEsMCwxLjRMMTgsMTZMMjMuNywyMS43eiIgZmlsbD0iI0QxMUMxQyIgY2xhc3M9
+        IlJlZCIgLz4NCiAgPC9nPg0KPC9zdmc+Cw==
+</value>
+  </data>
+  <data name="simpleButtonApply.ImageOptions.SvgImage" type="DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v18.2" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFlEZXZFeHByZXNzLkRhdGEudjE4LjIsIFZlcnNpb249MTguMi41
+        LjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjg4ZDE3NTRkNzAwZTQ5YQUBAAAAHURl
+        dkV4cHJlc3MuVXRpbHMuU3ZnLlN2Z0ltYWdlAQAAAAREYXRhBwICAAAACQMAAAAPAwAAAPcBAAAC77u/
+        PD94bWwgdmVyc2lvbj0nMS4wJyBlbmNvZGluZz0nVVRGLTgnPz4NCjxzdmcgeD0iMHB4IiB5PSIwcHgi
+        IHZpZXdCb3g9IjAgMCAzMiAzMiIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcv
+        MjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4bWw6c3Bh
+        Y2U9InByZXNlcnZlIiBpZD0iTGF5ZXJfMSI+DQogIDxnIGlkPSJFeHBvcnQiPg0KICAgIDxwYXRoIGQ9
+        Ik0xMCwxMkg2VjZoNFYxMnogTTIyLDEydjZ2OWMwLDAuNi0wLjQsMS0xLDFIMWMtMC42LDAtMS0wLjQt
+        MS0xVjdjMC0wLjYsMC40LTEsMS0xaDN2OGgxNHYtMkgyMnogTTE4LDE4SDQgICB2NmgxNFYxOHoiIGZp
+        bGw9IiM3MjcyNzIiIGNsYXNzPSJCbGFjayIgLz4NCiAgICA8cG9seWdvbiBwb2ludHM9IjE2LDEwIDI0
+        LDEwIDI0LDE0IDMyLDggMjQsMiAyNCw2IDE2LDYgICIgZmlsbD0iIzAzOUMyMyIgY2xhc3M9IkdyZWVu
+        IiAvPg0KICA8L2c+DQo8L3N2Zz4L
 </value>
   </data>
 </root>
